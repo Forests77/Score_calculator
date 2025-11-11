@@ -16,6 +16,15 @@
   .scoreBox{margin-top:14px;padding:12px;border-radius:8px;background:#eef6ff;font-weight:700;text-align:center;font-size:18px;}
   select,input[type="radio"]{font-size:16px}
 </style>
+
+<style>
+  .question label.question-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+</style>
+  
 </head>
 <body>
 <div class="wrap">
@@ -37,7 +46,7 @@
     <!-- Q2 -->
     <div class="question">
       <label>Q2: Subsequent cases in the day canceled?</label>
-      <div class="row">
+      <div class="row" style="margin-top: 8px;">
         <label><input type="radio" name="q2" value="no" checked> No</label>
         <label><input type="radio" name="q2" value="yes"> Yes (-3)</label>
       </div>
@@ -150,5 +159,6 @@
 </body>
 
 </html>
+
 
 
