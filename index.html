@@ -153,9 +153,14 @@
       <p><small>Minor-ECD, UA/PS-PSIB cables, UA and PS during setup.</small></p>
       <p><small>Major-UA and PS after homing, PSIB, SE, SC, FB, shuttle, white/black cables.</small></p>
       <div class="row-vertical">
-        <label><input type="radio" name="q4" value="0" checked> None (0)</label>
-        <label><input type="radio" name="q4" value="1"> Minor (-1)</label>
-        <label><input type="radio" name="q4" value="2"> Major (-2)</label>
+        <label>
+        Minor swaps (-1 each):
+        <input type="number" name="q4_minor" value="0" min="0" style="width:60px; margin-left:8px;">
+        </label>
+        <label>
+        Major swaps (-2 each):
+        <input type="number" name="q4_major" value="0" min="0" style="width:60px; margin-left:8px;">
+        </label>
       </div>
     </div>
 
@@ -229,7 +234,14 @@
       const deductions = [];
       deductions.push(document.querySelector('input[name="q2"]:checked').value === "yes" ? 3 : 0);
       deductions.push(Number(document.querySelector('input[name="q3"]:checked').value));
-      deductions.push(Number(document.querySelector('input[name="q4"]:checked').value));
+    
+      
+      // Q4 deduction based on counts
+      const q4_minor = Number(document.querySelector('input[name="q4_minor"]').value) || 0;
+      const q4_major = Number(document.querySelector('input[name="q4_major"]').value) || 0;
+      const q4Deduction = (1 * q4_minor) + (2 * q4_major);
+      deductions.push(q4Deduction);
+
       deductions.push(Number(document.querySelector('input[name="q5"]:checked').value));
       deductions.push(Number(document.querySelector('input[name="q6"]:checked').value));
       deductions.push(Number(document.querySelector('input[name="q7"]:checked').value));
@@ -253,6 +265,7 @@
 </body>
 
 </html>
+
 
 
 
