@@ -115,7 +115,7 @@
     <div class="question">
      <label class="question-title">Q1: Case Aborted Due to Equipment Issues?</label>
      <p><small>Objective Criteria: Case not completed due to TULSA-PRO malfunction.</small></p>
-     <p><small>Notes:Overrides all other deductions.</small></p>
+     <p><small>Notes: Overrides all other deductions.</small></p>
      <div class="row-vertical">
         <label><input type="radio" name="q1" value="no" checked> No</label>
         <label><input type="radio" name="q1" value="yes"> Yes. If yes, jump to the end.</label>
@@ -125,7 +125,13 @@
     <!-- Q2 -->
     <div class="question">
       <label class="question-title">Q2: Subsequent cases in the day canceled?</label>
-      <div class="row" style="margin-top: 8px;">
+      
+      <--
+      <p><small>Objective Criteria: Case not completed due to TULSA-PRO malfunction.</small></p>
+      <p><small>Notes: Overrides all other deductions.</small></p>
+      -->
+        
+      <div class="row-vertical">
         <label><input type="radio" name="q2" value="no" checked> No</label>
         <label><input type="radio" name="q2" value="yes"> Yes (-3)</label>
       </div>
@@ -133,8 +139,10 @@
 
     <!-- Q3 -->
     <div class="question">
-      <label>Q3: Overall Technical delay time?</label>
-      <div class="row">
+      <label class="question-title">Q3: Overall Technical delays?(as entered on TFF)</label>
+      <p><small>Objective Criteria: Total time spent resolving equipment-related issue(s).</small></p>
+      <p><small>Notes: Includes setup or intra-procedure interruptions due to TULSA equipment.</small></p>
+      <div class="row-vertical">
         <label><input type="radio" name="q3" value="0" checked> None (0)</label>
         <label><input type="radio" name="q3" value="1"> &lt;15 min (-1)</label>
         <label><input type="radio" name="q3" value="2"> 15-30 min (-2)</label>
@@ -145,18 +153,22 @@
 
     <!-- Q4 -->
     <div class="question">
-      <label>Q4: Swapped components?</label>
-      <div class="row">
+      <label class="question-title">Q4: Swapped components?</label>
+      <p><small>Objective Criteria: Hardware replaced during setup or treatment.</small></p>
+      <p><small>Notes: Deduct for each unique replacement type if multiple swaps occur.</small></p>
+      <div class="row-vertical">
         <label><input type="radio" name="q4" value="0" checked> None (0)</label>
-        <label><input type="radio" name="q4" value="1"> Minor parts (-1)</label>
-        <label><input type="radio" name="q4" value="2"> Major parts (-2)</label>
+        <label><input type="radio" name="q4" value="1"> Minor parts: ECD, UA/PS-PSIB cables, UA and PS during setup. (-1)</label>
+        <label><input type="radio" name="q4" value="2"> Major parts: UA and PS after homing, PSIB, SE, SC, FB, shuttle, white/black cables. (-2)</label>
       </div>
     </div>
 
     <!-- Q5 -->
     <div class="question">
-      <label>Q5: Borrowed equipment/backup needed?</label>
-      <div class="row">
+      <label class="question-title">Q5: Borrowed equipment/backup needed?</label>
+      <p><small>Objective Criteria: Equipment transported or borrowed from another site.</small></p>
+      <p><small>Notes: Applied even if case is completed successfully.</small></p>
+      <div class="row-vertical">
         <label><input type="radio" name="q5" value="0" checked> No</label>
         <label><input type="radio" name="q5" value="2"> Yes (-2)</label>
       </div>
@@ -164,8 +176,10 @@
 
     <!-- Q6 -->
     <div class="question">
-      <label>Q6: Communication/power loss event?</label>
-      <div class="row">
+      <label class="question-title">Q6: Communication/power loss event?</label>
+      <p><small>Objective Criteria: Loss of control or connectivity requiring intervention, includes TDC crashes.</small></p>
+      <p><small>Notes: Applies when communication loss interrupts workflow > 5min.</small></p>
+      <div class="row-vertical">
         <label><input type="radio" name="q6" value="0" checked> No</label>
         <label><input type="radio" name="q6" value="1"> Yes (-1)</label>
       </div>
@@ -173,8 +187,10 @@
 
     <!-- Q7 -->
     <div class="question">
-      <label>Q7: Treatment plan adjusted to overcome equipment issues?</label>
-      <div class="row">
+      <label class="question-title">Q7: Treatment plan adjusted to overcome equipment issues?</label>
+      <p><small>Objective Criteria: Physicion could not deliver intended ablation plan due to equipment issues.</small></p>
+      <p><small>Notes: Plan adjusted due to UA shadow artifact or to avoid high-frequency sonication.</small></p>
+      <div class="row-vertical">
         <label><input type="radio" name="q7" value="0" checked> No</label>
         <label><input type="radio" name="q7" value="2"> Yes (-2)</label>
       </div>
@@ -182,7 +198,10 @@
 
     <!-- Q8 -->
     <div class="question">
-      <label>Q8: Other critical faults?</label>
+      <label class="question-title">Q8: Other Critical Faults?</label>
+      <p><small>Objective Criteria: Severe recurring error not covered above.</small></p>
+      <p><small>Notes: Discretionary deduction for rare but impactful events.</small></p>
+      <div class="row-vertical">
       <div class="row">
         <label><input type="radio" name="q8" value="0" checked> No</label>
         <label><input type="radio" name="q8" value="1"> Yes (-1)</label>
@@ -238,6 +257,7 @@
 </body>
 
 </html>
+
 
 
 
